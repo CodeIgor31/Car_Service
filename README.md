@@ -1,3 +1,6 @@
+# Task
+Сайт автосервиса, с авторизацией, базой данных пользователей и заказов, подключенной яндекс картой. Все остальные идеи пока еще обдумываются
+
 # README
 
 This README would normally document whatever steps are necessary to get the
