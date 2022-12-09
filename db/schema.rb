@@ -18,10 +18,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_193908) do
     t.string "email", null: false
     t.string "login"
     t.string "password_digest"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["login"], name: "index_users_on_login", unique: true
+    t.index ["phone"], name: "index_users_on_phone", unique: true
   end
 
 end

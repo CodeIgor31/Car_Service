@@ -1,15 +1,57 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.header{
+    background-color: rgb(123, 134, 143);
+}
+.footer {
+    background-color: rgb(123, 134, 143);
+    padding-top: 1.9em;
+    }
+    
+    .footer_container h3 {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #d2d2d7;
+    }
+    
+    .footer_card li {
+    margin-left: 0.9em;
+    color: #d2d2d7;
+    }
+.wrapper {
+    max-width: 70%;
+    margin: 0 auto;
+    background-color: white;
+}
+.card_end li {
+    list-style-type: none;
+    }
+    
+    .card_end a {
+    color: rgb(168, 32, 42);
+    }
+    
+    .span_footer {
+        margin-left: 10px;
+        color: #d2d2d7;
+    }
+    .car_time span {
+        color: #d2d2d7;
+    }
+    
+    .car_time {
+        margin-left: 10px;
+        font-size: 0.9em;
+    }
+    
+    .footer_card li {
+        margin-bottom: 0.4em;
+        font-size: 0.9em;
+    }
+        
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.phon{ 
+    background: "body.jpg"
+}
