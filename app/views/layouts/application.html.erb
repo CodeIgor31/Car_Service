@@ -29,7 +29,7 @@
             <li><strong><%= link_to "О компании", home_path, class: 'nav-link px-2' %></strong></li>
             <li><strong><%= link_to "Услуги", service_path, class: 'nav-link px-2' %></strong></li>
             <li><strong><%= link_to "Галерея", photo_path, class: 'nav-link px-2' %></strong></li>
-            <li><strong><%= link_to "Контакты", contacts_path, class: 'nav-link px-2' %></strong></li>
+            <li><strong><%= link_to "Контакты", contacts_path, class: 'nav-link px-2', data: {turbo: false} %></strong></li>
         </ul>
          </div>
       </a>
@@ -39,7 +39,7 @@
     <% flash.each do |type, msg| %>
       <div class='alert alert-info'>
         <strong id='msg'><%= msg %></strong>
-      </div>
+      </div> 
     <% end %>
     <%= yield %>
     </div>

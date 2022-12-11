@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   end
 
   def services
+    @services = Service.order(:title)
   end
 
   def gallery
