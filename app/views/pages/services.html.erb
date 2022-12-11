@@ -1,6 +1,7 @@
-<h1>Услуги</h1>
+<h1>Список услуг</h1>
 <% @services.each do |service| %>
     <h3><%= service.title %></h3>
     <p><h5>Описание:</h5> <%= service.description %></p>
     <p><h5>Цена:</h5> <%= number_to_currency(service.price, unit: "Руб.", format: "%n %u") %></p>
+    <%=  link_to 'Записаться', zap_path%>
 <%end%>

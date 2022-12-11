@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       return if user_signed_in?
   
       flash[:warning] = 'Вы не авторизованы'
-      redirect_to home_path
+      redirect_to login_path
     end
   
     # def no_autorize

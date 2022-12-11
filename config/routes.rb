@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'pages/services', as: 'service'
   get 'pages/gallery', as: 'photo'
   get 'pages/contacts', as: 'contacts'
-  get 'pages/busket', as: 'busk'
+  get 'pages/sign', as: 'zap'
+  post 'pages/create_sign'
 end
