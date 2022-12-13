@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   root 'pages#about', as: 'home'
   get 'sessions/new', as: 'login'
   get 'users/index', as: 'all'
-  get 'pages/services', as: 'service'
+  get 'signings/services', as: 'service'
   get 'pages/gallery', as: 'photo'
   get 'pages/contacts', as: 'contacts'
-  get 'pages/sign', as: 'zap'
-  post 'pages/create_sign'
+  get 'signings/sign', as: 'zap'
+  post 'signings/create_sign'
 end
