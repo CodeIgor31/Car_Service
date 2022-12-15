@@ -52,9 +52,6 @@
     justify-content: space-between;
 }
 
-.phon{ 
-    background: "body.jpg"
-}
 .map {
     height: 700px;
     margin-bottom: 0.8em;
@@ -63,3 +60,4 @@
 [class*="balloon__close-button"] {
 	opacity: 1;
 }
+body { background-image: url("body.jpg") ;}
