@@ -2,8 +2,10 @@
 <%= form_with model: @user do |form| %>
   <p><%= form.label :email, "Введите email" %></p>
   <p><%= form.email_field :email, placeholder: 'E-mail', class: 'form-control', id: 'email' %></p>
-  <p><%= form.label :login, "Введите логин" %></p>
-  <p><%= form.text_field :login, placeholder: 'login', class: 'form-control', id: 'login' %></p>
+  <p><%= form.label :first_name, "Введите имя" %></p>
+  <p><%= form.text_field :first_name, placeholder: 'Имя', class: 'form-control', id: 'login' %></p>
+  <p><%= form.label :second_name, "Введите фамилию" %></p>
+  <p><%= form.text_field :second_name, placeholder: 'Фамилия', class: 'form-control', id: 'login' %></p>
     <p><%= form.label :phone, "Введите номер телефона" %></p>
   <p><%= form.text_field :phone, class: 'form-control', id: 'phone' %></p>
   <p><%= form.label :password, "Введите пароль" %></p>

@@ -6,6 +6,8 @@
   <p><%= form.date_select(:date, start_year: 2022, end_year: 2027, order: [:day, :month, :year], prompt: { day: 'Выберите день', month: 'Выберите месяц', year: 'Выберите год' }) %></p>
   <p><%= form.label :trouble, "Кратко опишите проблему(Не обязательное поле)" %></p>
   <p><%= form.text_field :trouble, class: 'form-control' %></p>
+  <p><%= form.label :photo, "Прикрепите фотографию проблемы(Не обязательное поле)" %></p>
+  <p><%= form.text_field :photo, class: 'form-control' %></p>
   <p><%= form.submit("Оставить заявку") %></p>
 <% end %>
 

@@ -5,5 +5,6 @@ class User < ApplicationRecord
     has_many :service_records
   
     validates :email, presence: true, uniqueness: true
-    validates :login, presence: true, uniqueness: true
+    validates :first_name, presence: true
+    validates :second_name, presence: true
   end

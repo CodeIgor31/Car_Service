@@ -3,6 +3,7 @@
 <%@users.each do |user|%>
 <h3><%= k %> Пользователь:</h3>
     <p>Email: <%= user.email %></p>
-    <p>Логин: <%= user.login %></p>
+    <p>Имя: <%= user.first_name %></p>
+    <p>Фамилия: <%= user.second_name %></p>
     <% k += 1 %>
 <% end %>

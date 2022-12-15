@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Добро пожаловать, #{@user.login}!"
+      flash[:success] = "Добро пожаловать, #{@user.first_name}!"
       redirect_to home_path
     else
       redirect_to new_user_path, notice: 'Пароли не совпадают или данные логин или пароль существуют'
@@ -45,6 +45,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :login, :password, :password_confirmation, :phone)
+    params.require(:user).permit(:email, :first_name, :second_name, :password, :password_confirmation, :phone)
   end
 end
