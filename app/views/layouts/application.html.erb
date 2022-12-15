@@ -18,9 +18,9 @@
       <div class='text-right'>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-3 mb-md-0">
          <% if user_signed_in? %>
-            <strong><span class='purple'><%= current_user.first_name %></span></strong>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Редактировать профиль", edit_user_path(current_user), class: 'nav-link px-2' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Выйти", session_path, data: {turbo_method: :delete}, class: 'nav-link px-2' %></button></strong></li>
+            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Мои заказы", records_path(current_user), class: 'nav-link px-2' %></button></strong></li>
             <% else %>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Войти", login_path, class: 'nav-link px-2' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Зарегистрироваться", new_user_path, class: 'nav-link px-2' %></button></strong></li>

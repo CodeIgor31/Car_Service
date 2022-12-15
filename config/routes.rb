@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'my_services/show', as: 'records'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resource :session, only: %i[new create destroy]
