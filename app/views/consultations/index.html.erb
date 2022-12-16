@@ -1,0 +1,11 @@
+ <h1>Запись на консультацию</h1>
+ <%= form_with url: "/consultations/consult_response", method: :post do |form| %>
+  <p><%= form.label :body, "Кратко опишите цель консультации" %></p>
+  <p><%= form.text_field :body, class: 'form-control' %></p>
+  <%= form.radio_button :way, 'phone' %> Телефон
+  <%= form.radio_button :way, 'mail' %> Почта
+  <%= form.radio_button :way, 'any' %> Любой
+  <p><%= form.submit("Оставить заявку") %></p>
+<% end %>
+
+<div id='consult_response-container'></div>

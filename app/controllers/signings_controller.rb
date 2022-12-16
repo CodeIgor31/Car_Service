@@ -15,8 +15,7 @@ class SigningsController < ApplicationController
         @record.save
         flash[:notice] = "Ваша заявка оставленна"
       else
-        flash[:notice] = "Ваша заявка отклонена"
-        redirect_to zap_path
+        flash[:notice] = "Ваша заявка отклонена, заполните обязательные поля"
       end
     end
   

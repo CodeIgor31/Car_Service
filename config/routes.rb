@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'consultations/index', as: 'consult'
   get 'my_services/show', as: 'records'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   get 'pages/contacts', as: 'contacts'
   get 'signings/sign', as: 'zap'
   post 'signings/create_sign'
+  post 'consultations/consult_response'
 end
