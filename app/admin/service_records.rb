@@ -1,3 +1,3 @@
 ActiveAdmin.register ServiceRecord do
-  permit_params :trouble, :date, :user_id, :service_id, :status
+  permit_params :trouble, :date, :user_id, :service_id, :status, :master_id
 end

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# to see your services and theirs status
 class MyServicesController < ApplicationController
   before_action :autorize, only: :show
   def show

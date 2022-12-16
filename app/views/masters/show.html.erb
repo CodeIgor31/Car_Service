@@ -1,0 +1,6 @@
+<h1>Список мастеров</h1>
+<% @masters.each do |master| %>
+    <h3><%= master.fio %></h3>
+    <p><h5>Возраст:</h5> <%= master.age %></p>
+    <p><h5>Стаж:</h5> <%= master.stage %></p>
+<%end%>

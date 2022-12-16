@@ -30,7 +30,7 @@ function init() {
 			<div class="balloon">
 				<div><h3>Автосервис Cars feeling</h3></div>
 				<div class="balloon__contacts">
-					<h5><a href="tel:+79277091412">+79163849119</a></h5>
+					<h5><a href="tel:+79277091412">+79277091412</a></h5>
 				</div>
 			</div>
 			`

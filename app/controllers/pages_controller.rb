@@ -1,10 +1,10 @@
+# frozen_string_literal: true
+
+# controllin no action pages
 class PagesController < ApplicationController
-  def about
-  end
+  def about; end
 
-  def gallery
-  end
+  def gallery; end
 
-  def contacts
-  end
+  def contacts; end
 end
