@@ -1,0 +1,18 @@
+ <%= form_with url: worktest_path do |form| %>
+  <p><%= form.label :age, "Введите ваш возраст" %></p>
+  <p><%= form.number_field :age, class: 'form-control' %></p>
+  <p><%= form.label :male, "Выберите пол" %></p>
+  <%= form.radio_button :male, 'women' %> Женщина
+  <%= form.radio_button :male, 'man' %> Мужчина
+  <p><%= form.label :about, "Расскажите о своих сильных и слабых сторонах" %></p>
+  <p><%= form.text_field :about, class: 'form-control' %></p>
+  <p><%= form.label :task_1, "Кем вы видите себя в нашей компании через 5 лет" %></p>
+  <p><%= form.text_field :task_1, class: 'form-control' %></p>
+  <p><%= form.label :task_2, "Почему вы выбрали именно наш автосервис" %></p>
+  <p><%= form.text_field :task_2, class: 'form-control' %></p>
+  <p><%= form.label :task_3, "Почему мы должны взять именно вас" %></p>
+  <p><%= form.text_field :task_3, class: 'form-control' %></p>
+  <p><%= form.submit("Оставить заявку") %></p>
+<% end %>
+
+<div id='zayavka_response-container'></div>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'works/prom', as: 'prom'
+  get 'works/main', as: 'work'
+  post 'works/test_page', as: 'worktest'
   get 'consultations/index', as: 'consult'
   get 'my_services/show', as: 'records'
   devise_for :admin_users, ActiveAdmin::Devise.config

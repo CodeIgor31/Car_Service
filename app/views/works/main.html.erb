@@ -1,0 +1,8 @@
+ <h1>Запись на обслуживание в Cars feeling</h1>
+ Мы лучшие, идите к нам
+<%= link_to "Оставить заявку", prom_path, data: {turbo_frame: "frame1"}%>
+<%= turbo_frame_tag "frame1" do%>
+<div class="my-8 w-full mx-auto" id="content">
+      <% render "tests_page" %>
+  </div>
+<%end%>
