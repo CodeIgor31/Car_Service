@@ -22,7 +22,7 @@
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Выйти", session_path, data: {turbo_method: :delete}, class: 'nav-link px-2' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Мои заказы", records_path(current_user), class: 'nav-link px-2' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Заказать конусльтацию", consult_path, class: 'nav-link px-2' %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Работае у нас", work_path, class: 'nav-link px-2' %></button></strong></li>
+            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Работа у нас", work_path, class: 'nav-link px-2' %></button></strong></li>
             <% else %>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Войти", login_path, class: 'nav-link px-2' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Зарегистрироваться", new_user_path, class: 'nav-link px-2' %></button></strong></li>

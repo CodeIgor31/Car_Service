@@ -1,3 +1,19 @@
+<h3>Ваша заявка</h3>
+    <p>Услуга: <%= Service.find_by(id: @record.service_id).title %></p>
+    <p>Дата записи: <%= @record.date %></p>
+    <p>Мастер: <%= Master.find_by(id: @record.master_id).fio %></p>
+    <% if @record.trouble.size != 0 %>
+    <p>Ваш комментарий о проблеме: <%= @record.trouble %></p>
+    <% end %>
+    <% if @record.pictures.size != 0%>
+    <p>Прикрепленные фотографии:</p>
+    <% @record.pictures.each do |picture| %>
+        <%= link_to image_tag(@record.picture_thumb(picture)), picture %>
+    <% end %>
+    <%end%>
+    <p>Статус: <%= @record.status %></p>
+
+
 <div class='alert alert-info'>
         <strong id='msg'><%= flash[:notice] %></strong>
 </div> 

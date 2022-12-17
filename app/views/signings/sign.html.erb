@@ -8,8 +8,8 @@
   <p><%= form.collection_select :master_id, Master.order(:fio),:id,:fio, include_blank: true %></p>
   <p><%= form.label :trouble, "Кратко опишите проблему(Не обязательное поле)" %></p>
   <p><%= form.text_field :trouble, class: 'form-control' %></p>
-  <p><%= form.label :photo, "Прикрепите фотографию проблемы(Не обязательное поле)" %></p>
-  <p><%= form.text_field :photo, class: 'form-control' %></p>
+  <p><%= form.label :pictures, "Прикрепите фотографию проблемы(Не обязательное поле)" %></p>
+  <p><%= form.file_field :pictures, multiple: true, class: 'form-control' %></p>
   <p><%= form.submit("Оставить заявку") %></p>
 <% end %>
 

@@ -24,6 +24,6 @@ class SigningsController < ApplicationController
   private
 
   def sign_form_params
-    params.permit(:service_id, :date, :trouble, :master_id)
+    params.permit(:service_id, :date, :trouble, :master_id, pictures: [])
   end
 end
