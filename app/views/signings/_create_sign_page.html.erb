@@ -1,3 +1,5 @@
+<div class='top'>
+<% if @record.valid? %>
 <h3>Ваша заявка</h3>
     <p>Услуга: <%= Service.find_by(id: @record.service_id).title %></p>
     <p>Дата записи: <%= @record.date %></p>
@@ -12,8 +14,14 @@
     <% end %>
     <%end%>
     <p>Статус: <%= @record.status %></p>
-
-
-<div class='alert alert-info'>
+    <div class='alert alert-info'>
         <strong id='msg'><%= flash[:notice] %></strong>
 </div> 
+<% else %>
+<ul>
+    <% @record.errors.each do |error| %>
+       <div class='alert alert-info'><li><%= error.full_message %></li></div>
+    <% end %>
+  </ul>
+  <% end %>
+ </div>

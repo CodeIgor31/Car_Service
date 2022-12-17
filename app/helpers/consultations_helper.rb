@@ -1,12 +1,16 @@
 module ConsultationsHelper
-    def set_way(way)
+    def set_ways(way)
       case way
         when 'phone'
-          [current_user.phone, nil]
+          0
         when 'mail'
-          [nil, current_user.email]
+          1
         when 'any'
-          [current_user.phone, current_user.email]
+          2
       end
+    end
+
+    def set_info
+      [current_user.phone, current_user.email]
     end
 end

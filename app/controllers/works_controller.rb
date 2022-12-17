@@ -15,8 +15,6 @@ class WorksController < ApplicationController
     if @work.valid?
       @work.save
       flash[:notice] = 'Ваша заявка вскоре будет рассмотрена'
-    else
-      flash[:notice] = 'Что-то пошло не так'
     end
   end
 

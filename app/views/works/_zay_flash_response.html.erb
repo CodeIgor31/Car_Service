@@ -1,3 +1,14 @@
+<div class='top'>
+<% if @work.valid? %>
 <div class='alert alert-info'>
         <strong id='msg'><%= flash[:notice] %></strong>
 </div> 
+<% else %>
+  <ul>
+    <% @work.errors.each do |error| %>
+       <div class='alert alert-info'><li><%= error.full_message %></li></div>
+    <% end %>
+  </ul>
+  <% end %>
+ </div>
+

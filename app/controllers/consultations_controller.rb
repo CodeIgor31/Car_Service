@@ -9,13 +9,11 @@ class ConsultationsController < ApplicationController
   def consult_response
     @consultation = Consultation.new(cons_form_params)
     @consultation.user_id = current_user.id
-    @way = params[:way]
-    @consultation.phone, @consultation.mail = set_way(@way)
+    @consultation.way = set_ways(params[:way])
+    @consultation.phone, @consultation.mail = set_info
     if @consultation.valid?
       @consultation.save
       flash[:notice] = 'Ваша заявка на консультацию оставленна, с вами свяжутся в течение часа'
-    else
-      flash[:notice] = 'Что-то пошло не так'
     end
   end
 

@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get 'my_services/show', as: 'records'
   get 'reviews/show', as: 'comm'
   post 'reviews/new'
+  post 'users/create'
 end

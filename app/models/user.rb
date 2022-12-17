@@ -9,9 +9,12 @@ class User < ApplicationRecord
     has_one :work
     has_many :reviews
   
-    validates :email, presence: true, uniqueness: true
+    validates :email, presence: true, uniqueness: true, format: {with: /\A[a-zA-Z0-9\.]+@[a-z]{2,5}\.[a-z]{2,3}\z/, 
+      message: "email is not valid" }
     validates :first_name, presence: true
     validates :second_name, presence: true
+    validates :phone, presence: true, uniqueness: true, format: { with: /\A\+7\d{10}\z/,
+      message: "starts with +7 and only numbers" }
 
     validate :password_presence
     validate :correct_old_password, on: :update

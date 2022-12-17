@@ -7,8 +7,6 @@ class ReviewsController < ApplicationController
     if @comment.valid?
       @comment.save
       flash[:notice] = 'Комментарий оставлен'
-    else
-      flash[:notice] = 'Что-то пошло не так'
     end
   end
 
