@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   post 'works/test_page', as: 'worktest'
   get 'consultations/index', as: 'consult'
   get 'my_services/show', as: 'records'
+  get 'reviews/show', as: 'comm'
+  post 'reviews/new'
 end
