@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_17_164158) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_17_203938) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,6 +91,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_17_164158) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "service_points", force: :cascade do |t|
+    t.string "address"
+    t.string "phone_number"
+  end
+
   create_table "service_records", force: :cascade do |t|
     t.text "trouble"
     t.date "date"
@@ -98,6 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_17_164158) do
     t.integer "service_id"
     t.integer "status", default: 0
     t.integer "master_id"
+    t.integer "service_point_id"
   end
 
   create_table "services", force: :cascade do |t|

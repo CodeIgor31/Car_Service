@@ -3,6 +3,8 @@
 <h3>Ваша заявка</h3>
     <p>Услуга: <%= Service.find_by(id: @record.service_id).title %></p>
     <p>Дата записи: <%= @record.date %></p>
+    <p>Техцентр: <%= ServicePoint.find_by(id: @record.service_point_id).address %></p>
+    <p>Номер телефона техцентра: <%= ServicePoint.find_by(id: @record.service_point_id).phone_number %></p>
     <p>Мастер: <%= Master.find_by(id: @record.master_id).fio %></p>
     <% if @record.trouble.size != 0 %>
     <p>Ваш комментарий о проблеме: <%= @record.trouble %></p>

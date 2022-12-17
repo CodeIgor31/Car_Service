@@ -7,4 +7,7 @@ class PagesController < ApplicationController
   def gallery; end
 
   def contacts; end
+
+  def guarantee
+  end
 end
