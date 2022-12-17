@@ -34,7 +34,8 @@ class UsersController < ApplicationController
       flash[:success] = 'Профиль обновлен'
       redirect_to edit_user_path(current_user)
     else
-      render :edit
+      flash[:success] = 'Что-то не так'
+      redirect_to edit_user_path(current_user)
     end
   end
 
@@ -45,6 +46,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :second_name, :password, :password_confirmation, :phone)
+    params.require(:user).permit(:email, :first_name, :second_name, :password, :password_confirmation, :phone, :old_password)
   end
 end
