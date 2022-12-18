@@ -13,6 +13,7 @@ class WorksController < ApplicationController
     @male = params[:male]
     @work.male = set_male(@male)
     if @work.valid?
+      WorkMailer.with(user: current_user).my_application_for_work.deliver_now
       @work.save
       flash[:notice] = 'Ваша заявка вскоре будет рассмотрена'
     end

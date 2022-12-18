@@ -4,14 +4,14 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @user.first_name %></h1>
+    <h1>Спасибо за регистрацию в автосервисе Cars feeling, <%= @user.first_name %></h1>
     <p>
-      You have successfully signed up to example.com,
+      Вы сделали правильный выбор, надеемся, что вскоре вы станете нашим постоянным клиентом
     </p>
     <p>
-      To login to the site, just follow this link: <%= @url %>.
+      Вернуться на сайт  <%=link_to 'Главная страница', @url %>
     </p>
-    <p>Thanks for joining and have a great day!</p>
+    <p>Всего самого наилучшего, хорошего дня!</p>
   </body>
 </html>
 

@@ -14,6 +14,7 @@ class SigningsController < ApplicationController
     @record = ServiceRecord.new(sign_form_params)
     @record.user_id = current_user.id
     if @record.valid?
+      SigningMailer.with(record: @record, user: current_user).my_record.deliver_now
       @record.save
       flash[:notice] = 'Ваша заявка оставленна'
     end

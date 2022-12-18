@@ -12,6 +12,7 @@ class ConsultationsController < ApplicationController
     @consultation.way = set_ways(params[:way])
     @consultation.phone, @consultation.mail = set_info
     if @consultation.valid?
+      ConsultationMailer.with(user: current_user).my_consult.deliver_now
       @consultation.save
       flash[:notice] = 'Ваша заявка на консультацию оставленна, с вами свяжутся в течение часа'
     end

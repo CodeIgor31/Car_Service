@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @user.first_name %>, ваш заказ:</h1>
+    <p>
+     <strong>Дата:</strong> <%= l @record.date, format: :long %>
+    </p>
+    <p>
+     <strong>Услуга:</strong> <%= Service.find_by(id: @record.service_id).title %>
+    </p>
+    <p>
+     <strong>Техцентр:</strong> <%= ServicePoint.find_by(id: @record.service_point_id).address %>
+    </p>
+    <p>
+     <strong>Номер телефона техцентра:</strong> <%=   ServicePoint.find_by(id: @record.service_point_id).phone_number %>
+    </p>
+    <p>
+     <strong>Мастер:</strong> <%=  Master.find_by(id: @record.master_id).fio %>
+    </p>
+    <h3><p>Всего самого наилучшего, хорошего дня!</p></h3>
+  </body>
+</html>
+
