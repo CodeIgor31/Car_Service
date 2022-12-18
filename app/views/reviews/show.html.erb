@@ -13,7 +13,7 @@
 <% @comments.order(created_at: :desc).each do |comm| %>
 <div class='top'>
 <div class='line'></div>
-<p>Дата: <%= comm.created_at %></p>
+<p>Дата: <%= l comm.created_at, format: :long %></p>
 <p>Клиент: <%= User.find_by(id: comm.user_id).first_name %> <%= User.find_by(id: comm.user_id).second_name %></p>
 <p>Отзыв: <%= comm.body %></p>
 <% if comm.photos.size != 0%>

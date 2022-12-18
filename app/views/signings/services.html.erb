@@ -1,5 +1,5 @@
 <h1>Список услуг</h1>
-<%= button_to 'Записаться', zap_path, method: :get%>
+<%= button_to 'Записаться', zap_path, method: :get, class: 'form-control'%>
 <% @services.each do |service| %>
 <div class='line'></div>
     <h3><%= service.title %></h3>
