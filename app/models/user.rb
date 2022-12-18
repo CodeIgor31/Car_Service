@@ -11,8 +11,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, format: {with: /\A[a-zA-Z0-9\.]+@[a-z]{2,5}\.[a-z]{2,3}\z/, 
     message: "email is not valid" }
-  validates :first_name, presence: true
-  validates :second_name, presence: true
+  validates :first_name, presence: true, format: {with: /\A[а-яА-Я\-]+\z/, message: "Только русские буквы"}
+  validates :second_name, presence: true, format: {with: /\A[а-яА-Я\-]+\z/, message: "Только русские буквы"}
   validates :phone, presence: true, uniqueness: true, format: { with: /\A\+7\d{10}\z/,
     message: "starts with +7 and only numbers" }
 
