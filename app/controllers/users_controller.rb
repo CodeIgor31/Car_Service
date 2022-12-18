@@ -4,7 +4,7 @@
 class UsersController < ApplicationController
   # before_action :no_autorize, only: %i[new create]
   before_action :autorize, only: %i[edit update]
-  before_action :set_user, only: %i[edit update destroy]
+  # before_action :set_user, only: %i[edit update destroy]
 
   def index; end
 
@@ -28,12 +28,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    @flag = false
     if current_user.update user_params
-      flash[:success] = 'Профиль обновлен'
-      redirect_to edit_user_path(current_user)
-    else
-      flash[:success] = 'Что-то не так'
-      redirect_to edit_user_path(current_user)
+      @flag = true
+      flash[:notice] = 'Профиль обновлен'
     end
   end
 

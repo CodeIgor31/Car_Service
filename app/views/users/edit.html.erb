@@ -1,5 +1,5 @@
 <h1>Редактирование профиля</h1>
-<%= form_with model: current_user do |form| %>
+<%= form_with model: current_user, url: '/users/update', method: :post do |form| %>
   <p><%= form.label :email, "Обновите email" %></p>
   <p><%= form.email_field :email, placeholder: 'E-mail', class: 'form-control', id: 'email' %></p>
   <p><%= form.label :password, "Обновите пароль" %></p>
@@ -12,3 +12,5 @@
   <p><%= form.password_field :old_password, class: 'form-control' %></p>
   <p><%= form.submit "Обновить" %></p>
 <% end %>
+
+<div id='error_response-container'></div>
