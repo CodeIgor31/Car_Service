@@ -1,0 +1,83 @@
+ru:  
+  activerecord:
+    models:
+      user: 'Пользователи'
+      work: 'Заявки на работу'
+      service: 'Услуги'
+      service_record: 'Записи на услуги'
+      service_point: 'Техцентры'
+      review: 'Отзывы'
+      master: 'Мастеры'
+      consultation: 'Консультации'
+      admin_user: 'Администраторы'
+      comment: 'Комментарии'
+    attributes:
+      user:
+        email: "Почта"
+        first_name: "Имя"
+        second_name: "Фамилия"
+        phone: "Телефон"
+        password: "Пароль"
+        old_password: "Старый пароль"
+        password_confirmation: "Подтверждение пароля"
+        password_digest: 'Хэш пароля'
+        created_at: "Созданно"
+        updated_at: 'Обновленно'
+      
+      consultation:
+        user: 'Пользователь'
+        mail: "Почта"
+        phone: "Телефон"
+        body: "Поле ввода"
+        way: "Способ связи"
+        created_at: "Созданно"
+        updated_at: 'Обновленно'
+      
+      work:
+        user: 'Пользователь'
+        age: 'Возраст'
+        male: 'Гендр'
+        task_1: 'Ответ на вопрос 1'
+        task_2: 'Ответ на вопрос 2'
+        task_3: 'Ответ на вопрос 3'
+        about: 'Информация о пользователе'
+        сreated_at: "Созданно"
+        updated_at: 'Обновленно'
+
+      service_record:
+        user: 'Пользователь'
+        trouble: 'Описание проблемы'
+        status: 'Статус заказа'
+        master: 'Мастер'
+        service: 'Услуга'
+        service_point: 'Техцентр'
+        date: 'Дата'
+
+      review:
+        user: 'Пользователь'
+        body: 'Поле комментария'
+        created_at: "Созданно"
+        updated_at: 'Обновленно'
+
+      admin_user:
+        email: "Почта"
+        encrypted_password: "Пароль"
+        reset_password_token: "Сбросить пароль"
+        created_at: "Созданно"
+        current_sign_in_at: ''
+        sign_in_count: ''
+
+      master:
+        fio: 'ФИО'
+        age: 'Возраст'
+        stage: 'Стаж'
+
+      service_point:
+        address: 'Адрес'
+        phone_number: 'Номер телефона'
+
+      service:
+        title: 'Название'
+        description: 'Описание'
+        price: 'Цена'
+        image: 'Фото'

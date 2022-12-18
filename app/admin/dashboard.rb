@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Dashboard" do
     
     columns do
       column do
-        panel "Recent Records" do
+        panel "Последние заказы" do
           ul do
             ServiceRecord.limit(5).map do |rec|
               li link_to(rec.date, admin_service_records_path(rec))
@@ -18,7 +18,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Recent works" do
+        panel "Запросы по поводу работы" do
           ul do
             Work.limit(5).map do |work|
               li link_to(work.created_at, admin_work_path(work))
@@ -28,8 +28,8 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
+        panel "Информация" do
+          para "Добро пожаловать в ActiveAdmin."
         end
       end
     end
