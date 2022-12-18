@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   get 'reviews/show', as: 'comm'
   post 'reviews/new'
   post 'users/update'
+  post 'users/create'
   get 'pages/guarantee', as: 'garant'
 end
