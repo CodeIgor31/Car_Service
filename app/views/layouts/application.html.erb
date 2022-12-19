@@ -15,42 +15,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
   </head>
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom header">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4"><strong><span class='purple'>Cars feeling</span></strong></span>
-      <div class='text-right'>
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-3 mb-md-0">
-              <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "О компании", home_path, class: 'nav-link px-2' %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Услуги", service_path, class: 'nav-link px-2' %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Мастеры", masters_path, class: 'nav-link px-2' %></button></strong></li>
-             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Гарантии", garant_path, class: 'nav-link px-2' %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Галерея", photo_path, class: 'nav-link px-2' %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%=link_to "Работа у нас", work_path, class: 'nav-link px-2' %></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Контакты", contacts_path, class: 'nav-link px-2', data: {turbo: false} %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Отзывы", comm_path, class: 'nav-link px-2' %></button></strong></li>
-         <% if user_signed_in? %>
-                  <li class="nav-item dropdown mr-auto">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Аккаунт
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <li><%=link_to "Редактировать профиль",  edit_user_path(current_user), class: "dropdown-item btn", type: "button"%></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><%=link_to "Мои заказы", records_path(current_user), class: "dropdown-item btn", type: "button"%></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><%=link_to "Заказать конусльтацию", consult_path, class: "dropdown-item btn", type: "button"%></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><%= button_to "Выйти", session_path, method: :delete, class: "dropdown-item btn btn-lg"%></li>
-                      </ul>
-            <% else %>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Войти", login_path, class: 'nav-link px-2' %></button></strong></li>
-            <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Зарегистрироваться", new_user_path, class: 'nav-link px-2' %></button></strong></li>
-            <% end %>
-        </ul>
-         </div>
-      </a>
-    </header>
+  <%= render 'header/header' %>
   <body>
   <div class = "container">
     <% flash.each do |type, msg| %>
@@ -60,52 +25,6 @@
     <% end %>
     <%= yield %>
     </div>
+      <%= render 'footer/footer' %>
   </body>
-<footer>
-        <div class="footer">
-            <div class="wrapper_main">
-                <div class="footer_container">
-                    <div class="footer_card">
-                            <h3>
-                                <span>C</span>ars feeling
-                            </h3>
-                            <hr>
-                            <h3><span class="span_footer">Контакты</span></h3>
-                            <div class="car_time">
-                                <h5><span>Служба контроля качества</span></h5>
-                                <span><h6>+7 916 384-91-19</span>
-                                <p><span><h6>yagmurov.igor@mail.ru</span></p>
-                                <h5><span class="span_footer">Мы в социальных сетях:</span></h5>
-                                <a href="https://vk.com/yai08"><%=image_tag("vk.jpg", width: "40", height: "30") %></a>
-                                <a href="https://sueta.fun/users/6/"><%=image_tag("sueta.ico", width: "40", height: "30") %></a>
-                                <a href="https://github.com/CodeIgor31"><%=image_tag("github.png", width: "40", height: "30") %></a>
-                            </div>
-                    </div>
-                    <div class="footer_card">
-                        <h3>With all love</h3>
-                        <hr>
-                        <h3><span class="span_footer">Коротко о нас</span></h3>
-                        <ul>
-                        <li><h6>Лучшие на рынке</li>
-                        <li><h6>Быстрый сервис</li>
-                        <li><h6>Качественная работа</li>
-                        <li><h6>Выполним любой ваш заказ</li>
-                        <li><h6>Вы всегда правы</li>
-                        </ul>
-                    </div>
-                    <div class="footer_card card_end">
-                        <h3>You're the best</h3>
-                        <hr>
-                        <h3><span class="span_footer">Наша локация в Москве</span></h3>
-                        <ul>
-                        <li><h6><a href="">carsfeeling96@gmail.com</a></li>
-                        <li><h6>Восточный административный округ</li>
-                        <li><h6>улица 9-го Мая, 26</li>
-                        <li><h6>Почтовый индекс: 105173</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 </html>
