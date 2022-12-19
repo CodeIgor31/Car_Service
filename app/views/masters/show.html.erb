@@ -2,6 +2,7 @@
 <% @masters.each do |master| %>
 <div class='line'></div>
     <h3><%= master.fio %></h3>
+    <p><%= image_tag(master.mas_thumb(master.face))%></p>
     <p><h5>Возраст:</h5> <%= master.age %> лет</p>
     <p><h5>Стаж:</h5> <%= master.stage %>
     <% if master.stage < 5 && master.stage > 1 %>
