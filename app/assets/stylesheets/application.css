@@ -63,7 +63,7 @@
 body { background-image: url("body.jpg") ;}
 .line {
     padding-top: 10px;
-    border-bottom: 1px solid #f00; /* Параметры линии */
+    border-bottom: 1px solid rgb(0, 0, 0); /* Параметры линии */
    }
 .top {
     padding-bottom: 10px;
