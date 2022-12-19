@@ -13,7 +13,7 @@ class WorksController < ApplicationController
     @male = params[:male]
     @work.male = set_male(@male)
     if @work.valid?
-      WorkMailer.with(user: current_user).my_application_for_work.deliver_now
+      WorkMailer.with(user: current_user, work: @work).my_application_for_work.deliver_now
       @work.save
       flash[:notice] = 'Ваша заявка вскоре будет рассмотрена'
     end
@@ -22,6 +22,6 @@ class WorksController < ApplicationController
   private
 
   def about_form_params
-    params.permit(:age, :about, :task_1, :task_2, :task_3)
+    params.permit(:vacancy_id, :age, :about, :task_1, :task_2, :task_3)
   end
 end

@@ -1,6 +1,7 @@
 <h3>Просмотр всех заказов</h3>
 <% k = 1 %>
 <%@my_services.order(date: :desc).each do |record|%>
+<div class='line'></div>
 <h3><%= k %> Заказ:</h3>
     <p>Услуга: <%= Service.find_by(id: record.service_id).title %></p>
     <p>Дата записи: <%= l record.date, format: :long %></p>

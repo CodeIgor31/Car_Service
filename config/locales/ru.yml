@@ -11,6 +11,7 @@ ru:
       consultation: 'Консультации'
       admin_user: 'Администраторы'
       comment: 'Комментарии'
+      vacancy: 'Вакансии'
     attributes:
       user:
         email: "Почта"
@@ -35,6 +36,8 @@ ru:
       
       work:
         user: 'Пользователь'
+        vacancy_id: 'Вакансия'
+        vacancy: 'Вакансия'
         age: 'Возраст'
         male: 'Гендр'
         task_1: 'Ответ на вопрос 1'
@@ -71,6 +74,7 @@ ru:
         fio: 'ФИО'
         age: 'Возраст'
         stage: 'Стаж'
+        about: 'Обо мне'
 
       service_point:
         address: 'Адрес'

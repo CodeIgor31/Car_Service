@@ -1,6 +1,16 @@
 <h1>Список мастеров</h1>
 <% @masters.each do |master| %>
+<div class='line'></div>
     <h3><%= master.fio %></h3>
-    <p><h5>Возраст:</h5> <%= master.age %></p>
-    <p><h5>Стаж:</h5> <%= master.stage %></p>
+    <p><h5>Возраст:</h5> <%= master.age %> лет</p>
+    <p><h5>Стаж:</h5> <%= master.stage %>
+    <% if master.stage < 5 && master.stage > 1 %>
+        года
+        <% elsif master.stage == 1 %>
+        год
+        <%else%>
+        лет    
+    <%end%>
+    </p>
+    <p><h5>Информация обо мне:</h5> <%= master.about %></p>
 <%end%>
