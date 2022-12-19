@@ -19,12 +19,12 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
   end
 
-  # def no_autorize
-  #   return unless user_signed_in?
+  def no_autorize
+    return unless user_signed_in?
 
-  #   flash[:warning] = 'Вы уже авторизованы'
-  #   redirect_to form_path
-  # end
+    flash[:warning] = 'Вы уже авторизованы'
+    redirect_to home_path
+  end
 
   helper_method :current_user, :user_signed_in?
 end

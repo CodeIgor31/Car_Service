@@ -2,7 +2,7 @@
 
 # to order service
 class SigningsController < ApplicationController
-  before_action :autorize, only: :create_sign
+  before_action :autorize, only: %i[sign create_sign]
 
   def services
     @services = Service.order(:title)

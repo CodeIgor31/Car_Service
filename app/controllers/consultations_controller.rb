@@ -2,7 +2,7 @@
 
 # to get a consultation
 class ConsultationsController < ApplicationController
-  before_action :autorize, only: :consult_response
+  before_action :autorize
   include ConsultationsHelper
   def index; end
 

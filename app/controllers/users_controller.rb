@@ -2,15 +2,10 @@
 
 # User controller
 class UsersController < ApplicationController
-  # before_action :no_autorize, only: %i[new create]
+  before_action :no_autorize, only: %i[new create]
   before_action :autorize, only: %i[edit update]
-  # before_action :set_user, only: %i[edit update destroy]
 
   def index; end
-
-  def show
-    @users = User.all
-  end
 
   def new
     @user = User.new
@@ -37,10 +32,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:email, :first_name, :second_name, :password, :password_confirmation, :phone, :old_password)

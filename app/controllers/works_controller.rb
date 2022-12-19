@@ -2,6 +2,7 @@
 
 # to get job
 class WorksController < ApplicationController
+  before_action :autorize
   include WorksHelper
   def main; end
 

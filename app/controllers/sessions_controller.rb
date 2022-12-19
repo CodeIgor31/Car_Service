@@ -2,7 +2,7 @@
 
 # session controller
 class SessionsController < ApplicationController
-  # before_action :no_autorize, only: %i[new create]
+  before_action :no_autorize, only: %i[new create]
   before_action :autorize, only: :destroy
   def new; end
 
