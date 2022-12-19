@@ -15,25 +15,26 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      UserMailer.with(user: @user).welcome_email.deliver_now
-      session[:user_id] = @user.id
-      flash[:success] = "Добро пожаловать, #{@user.first_name}!"
-      redirect_to home_path
-    end
+    return unless @user.save
+
+    UserMailer.with(user: @user).welcome_email.deliver_now
+    session[:user_id] = @user.id
+    flash[:success] = "Добро пожаловать, #{@user.first_name}!"
+    redirect_to home_path
   end
 
   def update
     @flag = false
-    if current_user.update user_params
-      @flag = true
-      flash[:notice] = 'Профиль обновлен'
-    end
+    return unless current_user.update user_params
+
+    @flag = true
+    flash[:notice] = 'Профиль обновлен'
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :second_name, :password, :password_confirmation, :phone, :old_password)
+    params.require(:user).permit(:email, :first_name, :second_name, :password, :password_confirmation, :phone,
+                                 :old_password)
   end
 end

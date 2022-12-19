@@ -26,6 +26,7 @@
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Мастеры", masters_path, class: 'nav-link px-2' %></button></strong></li>
              <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Гарантии", garant_path, class: 'nav-link px-2' %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Галерея", photo_path, class: 'nav-link px-2' %></button></strong></li>
+            <li><strong><button type="button" class="btn btn-outline-dark"><%=link_to "Работа у нас", work_path, class: 'nav-link px-2' %></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Контакты", contacts_path, class: 'nav-link px-2', data: {turbo: false} %></button></strong></li>
             <li><strong><button type="button" class="btn btn-outline-dark"><%= link_to "Отзывы", comm_path, class: 'nav-link px-2' %></button></strong></li>
          <% if user_signed_in? %>
@@ -39,8 +40,6 @@
                       <li><%=link_to "Мои заказы", records_path(current_user), class: "dropdown-item btn", type: "button"%></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><%=link_to "Заказать конусльтацию", consult_path, class: "dropdown-item btn", type: "button"%></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><%=link_to "Работа у нас", work_path, class: "dropdown-item btn", type: "button"%></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><%= button_to "Выйти", session_path, method: :delete, class: "dropdown-item btn btn-lg"%></li>
                       </ul>

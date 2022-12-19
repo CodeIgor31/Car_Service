@@ -8,6 +8,5 @@ class PagesController < ApplicationController
 
   def contacts; end
 
-  def guarantee
-  end
+  def guarantee; end
 end

@@ -1,13 +1,16 @@
+# frozen_string_literal: true
+
+# for otzivi
 class ReviewsController < ApplicationController
   before_action :autorize, only: :new
 
   def new
     @comment = Review.new(comm_form_params)
     @comment.user_id = current_user.id
-    if @comment.valid?
-      @comment.save
-      flash[:notice] = 'Комментарий оставлен'
-    end
+    return unless @comment.valid?
+
+    @comment.save
+    flash[:notice] = 'Комментарий оставлен'
   end
 
   def show
@@ -19,5 +22,4 @@ class ReviewsController < ApplicationController
   def comm_form_params
     params.permit(:body, photos: [])
   end
-
 end

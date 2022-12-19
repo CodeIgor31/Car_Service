@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'securerandom'
 require 'rails_helper'
 
@@ -15,7 +16,9 @@ RSpec.describe User, type: :model do
     end
 
     context 'when email - valid' do
-      it { should allow_value(Faker::Lorem.word+'@'+[*'a'..'z'].shuffle[2..5].join + '.' + [*'a'..'z'].shuffle[2..3].join).for(:email) }
+      it {
+        should allow_value("#{Faker::Lorem.word}@#{[*'a'..'z'].shuffle[2..5].join}.#{[*'a'..'z'].shuffle[2..3].join}").for(:email)
+      }
     end
 
     context 'when first name - invalid' do
@@ -23,7 +26,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'when first name - valid' do
-      it { should allow_value([*'А'..'Я',*'а'..'я'].shuffle[2..5].join).for(:first_name) }
+      it { should allow_value([*'А'..'Я', *'а'..'я'].shuffle[2..5].join).for(:first_name) }
     end
 
     context 'when second name - invalid' do
@@ -31,15 +34,15 @@ RSpec.describe User, type: :model do
     end
 
     context 'when second name - valid' do
-      it { should allow_value([*'А'..'Я',*'а'..'я'].shuffle[2..5].join).for(:second_name) }
+      it { should allow_value([*'А'..'Я', *'а'..'я'].shuffle[2..5].join).for(:second_name) }
     end
 
     context 'when phone - invalid' do
-      it { should_not allow_value(rand(10000000000..99999999999).to_s).for(:phone) }
+      it { should_not allow_value(rand(10_000_000_000..99_999_999_999).to_s).for(:phone) }
     end
 
     context 'when phone - valid' do
-      it { should allow_value('+7'+ rand(1000000000..9999999999).to_s).for(:phone) }
+      it { should allow_value("+7#{rand(1_000_000_000..9_999_999_999)}").for(:phone) }
     end
 
     context 'when phone - has not only numbers' do

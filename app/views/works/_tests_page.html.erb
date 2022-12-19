@@ -1,7 +1,7 @@
  <%= form_with url: worktest_path do |form| %>
   <p><%= form.label :vacancy_id, "Выберите вакансию" %></p>
   <p><%= form.collection_select :vacancy_id, Vacancy.order(:title),:id,:title, include_blank: true %></p>
-  <p><%= form.label :age, "Введите ваш возраст" %></p>
+  <p><%= form.label :age, "Введите ваш возраст", id: 'age' %></p>
   <p><%= form.number_field :age, class: 'form-control' %></p>
   <p><%= form.label :male, "Выберите пол" %></p>
   <%= form.radio_button :male, 'women' %> Женщина
@@ -14,7 +14,7 @@
   <p><%= form.text_field :task_2, class: 'form-control' %></p>
   <p><%= form.label :task_3, "Почему мы должны взять именно вас" %></p>
   <p><%= form.text_field :task_3, class: 'form-control' %></p>
-  <p><%= form.submit("Оставить заявку") %></p>
+  <p><%= form.submit("Оставить заявку", id: 'work_app') %></p>
 <% end %>
 
 <div id='zayavka_response-container'></div>

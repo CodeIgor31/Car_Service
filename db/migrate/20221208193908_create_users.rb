@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email, null: false, index: { unique: true }
       t.string :first_name
       t.string :second_name
-      t.string :phone, index: {unique: true}
+      t.string :phone, index: { unique: true }
       t.string :password_digest
 
       t.timestamps
