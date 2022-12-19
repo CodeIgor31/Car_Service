@@ -1,8 +1,8 @@
 .header{
-    background-color: rgb(123, 134, 143);
+    background-color: rgb(61, 11, 15);
 }
 .footer {
-    background-color: rgb(123, 134, 143);
+    background-color: rgb(61, 11, 15);
     padding-top: 1.9em;
     }
     
@@ -60,11 +60,22 @@
 [class*="balloon__close-button"] {
 	opacity: 1;
 }
-body { background-image: url("body.jpg") ;}
+body { background-image: url("body7.jpg");}
+
 .line {
     padding-top: 10px;
     border-bottom: 1px solid rgb(0, 0, 0); /* Параметры линии */
    }
 .top {
     padding-bottom: 10px;
+}
+
+.btn{
+      background-color: rgb(5, 5, 5);
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+    } 
+.white {
+    color: white;
 }

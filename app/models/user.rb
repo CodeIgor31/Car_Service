@@ -19,8 +19,20 @@ class User < ApplicationRecord
   validate :password_presence
   validate :correct_old_password, on: :update
   validates :password, confirmation: true, allow_blank: true
+  
+  before_create :confirmation_token
+
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(validate: false)
+  end
 
   private
+
+  def confirmation_token
+    self.confirm_token = SecureRandom.urlsafe_base64.to_s if confirm_token.blank?
+  end
 
   def correct_old_password
     return if BCrypt::Password.new(password_digest_was).is_password?(old_password)

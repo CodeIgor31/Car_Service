@@ -4,6 +4,7 @@
 class UsersController < ApplicationController
   before_action :no_autorize, only: %i[new create]
   before_action :autorize, only: %i[edit update]
+  include UsersHelper
 
   def index; end
 
@@ -18,8 +19,7 @@ class UsersController < ApplicationController
     return unless @user.save
 
     UserMailer.with(user: @user).welcome_email.deliver_now
-    session[:user_id] = @user.id
-    flash[:success] = "Добро пожаловать, #{@user.first_name}!"
+    flash[:success] = "На почту выслано письмо, подтвердите, пожалуйста"
     redirect_to home_path
   end
 

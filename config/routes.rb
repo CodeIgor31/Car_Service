@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resource :session, only: %i[new create destroy]
-  resources :users
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
   root 'pages#about', as: 'home'
   get 'sessions/new', as: 'login'
   get 'users/index', as: 'all'
