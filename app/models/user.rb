@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true, format: {with: /\A[а-яА-Я\-]+\z/, message: "Только русские буквы"}
   validates :second_name, presence: true, format: {with: /\A[а-яА-Я\-]+\z/, message: "Только русские буквы"}
   validates :phone, presence: true, uniqueness: true, format: { with: /\A\+7\d{10}\z/,
-    message: "Начинается с +7 и только цифры" }
+    message: "Начинается с +7 и только цифры(10 штук)" }
 
   validate :password_presence
   validate :correct_old_password, on: :update
