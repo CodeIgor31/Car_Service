@@ -20,7 +20,7 @@
                     <ul class="dropdown-menu dropdown-menu-end text-bg-dark" aria-labelledby="navbarDropdown">
                       <li><%=link_to "Редактировать профиль",  edit_user_path(current_user), class: "nav-link px-2 text-white dropdown-item btn", type: "button"%></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><%=link_to "Мои заказы", records_path(current_user), class: "nav-link px-2 text-white dropdown-item btn", type: "button"%></li>
+                      <li><%=link_to "Мои заказы", records_path, class: "nav-link px-2 text-white dropdown-item btn", type: "button"%></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><%=link_to "Заказать конусльтацию", consult_path, class: "nav-link px-2 text-white dropdown-item btn", type: "button"%></li>
                       <li><hr class="dropdown-divider"></li>

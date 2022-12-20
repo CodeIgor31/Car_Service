@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   post 'users/update'
   post 'users/create'
   get 'pages/guarantee', as: 'garant'
+  get 'my_services/edit', as: 'edit_ord'
+  post 'my_services/update', as: 'data_up'
 end
