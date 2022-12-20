@@ -5,6 +5,15 @@ require 'rails_helper'
 
 RSpec.describe Service, type: :model do
   describe 'validations' do
+    let! (:service_data) {{ title: "Оригинал", description: 'Хочу протестироваться', price: '1500' }}
+    let! (:service_title_repeat) {{ title: "Оригинал", description: 'Это копия и ложь', price: '2500' }}
+    let! (:service_main) { Service.create(service_data )}
+    let! (:title_repeat) { Service.new(service_title_repeat) }
+
+    it "created title repeated service" do
+      expect(title_repeat.valid?).to eq(false)
+    end
+
     it { should validate_presence_of(:title).with_message('не может быть пустым') }
     it { should validate_presence_of(:description).with_message('не может быть пустым') }
     it { should validate_presence_of(:price).with_message('не может быть пустым') }

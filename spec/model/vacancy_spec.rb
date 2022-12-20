@@ -4,6 +4,15 @@ require 'securerandom'
 require 'rails_helper'
 
 RSpec.describe Vacancy, type: :model do
+  let! (:vacancy_data) {{ title: "Оригинал"}}
+  let! (:vacancy_title_repeat) {{ title: "Оригинал" }}
+  let! (:vacancy_main) { Vacancy.create(vacancy_data )}
+  let! (:title_repeat) { Vacancy.new(vacancy_title_repeat) }
+
+  it "created title repeated vacancy" do
+    expect(title_repeat.valid?).to eq(false)
+  end
+
   describe 'validations' do
     it { should validate_presence_of(:title).with_message('не может быть пустым') }
 

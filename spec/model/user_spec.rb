@@ -5,6 +5,21 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'validations' do
+    let! (:user_data) {{ first_name: "Игорь", second_name: 'Якунин', password: "123", password_confirmation: "123", email: "user@mail.ru", phone: '+79999999999' }}
+    let! (:user_email_repeat) {{ first_name: "Игорь", second_name: 'Якунин', password: "987", password_confirmation: "987", email: "user@mail.ru", phone: '+78888888888' }}
+    let! (:user_phone_repeat) {{ first_name: "Игорь", second_name: 'Якунин', password: "987", password_confirmation: "987", email: "test@mail.ru", phone: '+79999999999' }}
+    let! (:user_main) { User.create(user_data )}
+    let! (:user_mail_repeat) { User.new(user_email_repeat) }
+    let! (:user_tel_repeat) { User.new(user_phone_repeat) }
+
+    it "created mail repeated user" do
+      expect(user_mail_repeat.valid?).to eq(false)
+    end
+
+    it "created tel repeated user" do
+      expect(user_tel_repeat.valid?).to eq(false)
+    end
+
     it { should validate_presence_of(:email).with_message('не может быть пустым') }
     it { should validate_presence_of(:first_name).with_message('не может быть пустым') }
     it { should validate_presence_of(:second_name).with_message('не может быть пустым') }

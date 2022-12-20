@@ -5,6 +5,21 @@ require 'rails_helper'
 
 RSpec.describe ServicePoint, type: :model do
   describe 'validations' do
+    let! (:service_data) {{ address: 'Улица Тестера', phone_number: "+79999999999" }}
+    let! (:service_data_address_repeat) {{ address: 'Улица Тестера', phone_number: "+78888888888" }}
+    let! (:service_data_phone_repeat) {{ address: 'Улица Пушкина', phone_number: "+79999999999" }}
+    let! (:service_main) { ServicePoint.create(service_data )}
+    let! (:service_address_repeat) { ServicePoint.new(service_data_address_repeat) }
+    let! (:service_phone_repeat) { ServicePoint.new(service_data_phone_repeat) }
+
+    it "created address repeated service_point" do
+      expect(service_address_repeat.valid?).to eq(false)
+    end
+
+    it "created phone repeated service_point" do
+      expect(service_phone_repeat.valid?).to eq(false)
+    end
+
     it { should validate_presence_of(:address).with_message('не может быть пустым') }
     it { should validate_presence_of(:phone_number).with_message('не может быть пустым') }
 
