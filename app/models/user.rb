@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one :work
   has_many :reviews
 
-  validates :email, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z0-9.]+@[a-z]{2,5}\.[a-z]{2,3}\z/,
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z0-9.]+@[a-z]{2,6}\.[a-z]{2,3}\z/,
                                                                 message: 'Не верный формат' }
   validates :first_name, presence: true, format: { with: /\A[а-яА-Я\-]+\z/, message: 'Только русские буквы' }
   validates :second_name, presence: true, format: { with: /\A[а-яА-Я\-]+\z/, message: 'Только русские буквы' }

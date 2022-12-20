@@ -4,6 +4,7 @@
 .footer {
     background-color: rgb(61, 11, 15);
     padding-top: 1.9em;
+    flex-shrink: 0;
     }
     
     .footer_container h3 {
@@ -60,7 +61,11 @@
 [class*="balloon__close-button"] {
 	opacity: 1;
 }
-body { background-image: url("body7.jpg");}
+body { background-image: url("body7.jpg");
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 .line {
     padding-top: 10px;
@@ -78,4 +83,7 @@ body { background-image: url("body7.jpg");}
     } 
 .white {
     color: white;
+}
+main {
+    flex-grow: 1;
 }
