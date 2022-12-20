@@ -1,10 +1,10 @@
  <h1>Оставить отзыв</h1>
  <%= form_with url: "/reviews/new", method: :post do |form| %>
   <p><%= form.label :body, "Напишите комментарий" %></p>
-  <p><%= form.text_field :body, class: 'form-control' %></p>
+  <p><%= form.text_field :body, class: 'form-control', id: 'rev' %></p>
   <p><%= form.label :photos, "Прикрепите фотографии к комментарию(не обязательно)" %></p>
   <p><%= form.file_field :photos, multiple: true, class: 'form-control' %></p>
-  <p><%= form.submit("Оставить отзыв") %></p>
+  <p><%= form.submit("Оставить отзыв", id: "rev_btn") %></p>
 <% end %>
 <h3>Все отзывы</h3>
 
