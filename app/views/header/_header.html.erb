@@ -5,11 +5,11 @@
       <div class='text-right'>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-3 mb-md-0">
               <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "О компании", home_path, class: 'nav-link px-2 text-white' %></button>
-            <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "Услуги", service_path, class: 'nav-link px-2 text-white' %></button>
+            <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "Услуги", service_path, class: 'nav-link px-2 text-white', id: 'signs' %></button>
             <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "Мастеры", masters_path, class: 'nav-link px-2 text-white' %></button>
             <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "Гарантии", garant_path, class: 'nav-link px-2 text-white' %></button>
             <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "Галерея", photo_path, class: 'nav-link px-2 text-white' %></button>
-            <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%=link_to "Работа у нас", work_path, class: 'nav-link px-2 text-white' %>
+            <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%=link_to "Работа у нас", work_path, class: 'nav-link px-2 text-white', id: 'work_pag' %>
             <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "Контакты", contacts_path, class: 'nav-link px-2 text-white', data: {turbo: false} %></button>
             <button type="button" class="btn btn-outline-light me-2 text-bg-dark"><%= link_to "Отзывы", comm_path, class: 'nav-link px-2 text-white', id: 'revs' %></button>
          <% if user_signed_in? %>
@@ -22,7 +22,7 @@
                       <li><hr class="dropdown-divider"></li>
                       <li><%=link_to "Мои заказы", records_path, class: "nav-link px-2 text-white dropdown-item btn", type: "button"%></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><%=link_to "Заказать конусльтацию", consult_path, class: "nav-link px-2 text-white dropdown-item btn", type: "button"%></li>
+                      <li><%=link_to "Заказать конусльтацию", consult_path, class: "nav-link px-2 text-white dropdown-item btn", type: "button", id: 'cons_btn'%></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><%= button_to "Выйти", session_path, method: :delete, class: "nav-link px-2 text-white dropdown-item btn btn-lg", id: 'ex_btn'%></li>
                       </ul>

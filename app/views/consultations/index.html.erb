@@ -24,7 +24,7 @@
   <%= form.radio_button :way, 'phone' %> Телефон
   <%= form.radio_button :way, 'mail' %> Почта
   <%= form.radio_button :way, 'any' %> Любой
-  <p><%= form.submit("Оставить заявку") %></p>
+  <p><%= form.submit("Оставить заявку", id: 'cbtn') %></p>
 <% end %>
 
 <div id='consult_response-container'></div>

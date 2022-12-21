@@ -1,5 +1,8 @@
 <div class='top'>
 <% if @comment.valid? %>
+<div class='alert alert-info'>
+  <strong id='msg'><%= flash[:notice] %></strong>
+</div> 
 <p>Дата: <%= l @comment.created_at, format: :long%></p>
 <p>Клиент: <%= User.find_by(id: @comment.user_id).first_name %> <%= User.find_by(id: @comment.user_id).second_name %></p>
 <p>Текст: <%= @comment.body %></p>

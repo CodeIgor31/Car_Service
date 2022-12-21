@@ -18,8 +18,8 @@
 <h1>Редактировать заказ</h1>
 <%= form_with url: data_up_path, method: :post do |form| %>
   <p><%= form.label :date, "Выберите дату" %></p>
-  <p><%= form.date_select(:date, start_year: 2022, end_year: 2027, order: [:day, :month, :year], prompt: { day: 'Выберите день', month: 'Выберите месяц', year: 'Выберите год' }) %></p>
-  <p><%= form.submit "Обновить" %></p>
+  <p><%= form.date_select(:date, start_year: 2022, end_year: 2027, order: [:day, :month, :year], default: Date.today ) %></p>
+  <p><%= form.submit("Обновить", id: 'edit_rec') %></p>
 <% end %>
 <%= button_to 'К заказам', records_path, method: :get, class: 'form-control' %>
 </div>

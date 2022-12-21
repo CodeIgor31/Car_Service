@@ -20,7 +20,7 @@
     <%end%>
     <p>Статус: <%= record.status %></p>
     <% if (record.date - DateTime.now.to_date).to_i > 3 %>
-        <%= link_to 'Изменить заказ', edit_ord_path(ord_id: record.id), class: 'form-control' %>
+        <%= link_to 'Изменить заказ', edit_ord_path(ord_id: record.id), class: 'form-control', id: "id_#{k}" %>
         <% end %>
     <% k += 1 %>
 <% end %>
