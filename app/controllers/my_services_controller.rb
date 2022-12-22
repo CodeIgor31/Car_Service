@@ -9,16 +9,16 @@ class MyServicesController < ApplicationController
   end
 
   def edit
-      session[:service_edit] = @service.id
+    session[:service_edit] = @service.id
   end
 
   def update
     @flag = false
     @service = ServiceRecord.find_by(id: session[:service_edit])
-    if @service.update change_date_params
-      @flag = true
-      flash[:notice] = "Дата записи обновлена"
-    end
+    return unless @service.update change_date_params
+
+    @flag = true
+    flash[:notice] = 'Дата записи обновлена'
   end
 
   private
@@ -31,5 +31,4 @@ class MyServicesController < ApplicationController
   def change_date_params
     params.permit(:date)
   end
-
 end

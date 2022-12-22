@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'works', type: :feature do
   scenario 'invalid' do
     visit work_path
-    
+
     find('#work_btn').click
 
     find('#work_app').click

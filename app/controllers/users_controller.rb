@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     return unless @user.save
 
     UserMailer.with(user: @user).welcome_email.deliver_now
-    flash[:success] = "На почту выслано письмо, подтвердите, пожалуйста"
+    flash[:success] = 'На почту выслано письмо, подтвердите, пожалуйста'
     redirect_to home_path
   end
 

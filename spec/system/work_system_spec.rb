@@ -3,12 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe 'works', type: :system do
-    let! (:vacancy_data) {{ title: 'Тестовая вакансия' }}
-    let! (:vacancy_main) { Vacancy.create(vacancy_data )}
+  let!(:vacancy_data) { { title: 'Тестовая вакансия' } }
+  let!(:vacancy_main) { Vacancy.create(vacancy_data) }
   scenario 'creating work application' do
-
-    user = User.create(id: "1", first_name: 'Игорь', second_name: 'Ярубов', email: 'yarub@mail.ru', phone: '+71111111112', password: '12345',
-                password_confirmation: '12345', email_confirmed: "true")
+    user = User.create(id: '1', first_name: 'Игорь', second_name: 'Ярубов', email: 'yarub@mail.ru', phone: '+71111111112', password: '12345',
+                       password_confirmation: '12345', email_confirmed: 'true')
     visit login_path
 
     fill_in 'email', with: user.email
@@ -27,7 +26,7 @@ RSpec.describe 'works', type: :system do
     fill_in 'task_1', with: 'Супер пупер задание 1'
     fill_in 'task_2', with: 'Супер пупер задание 2'
     fill_in 'task_3', with: 'Супер пупер задание 3'
-    
+
     find('#work_app').click
 
     expect(page).to have_text('Ваша заявка вскоре будет рассмотрена')

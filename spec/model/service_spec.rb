@@ -5,12 +5,12 @@ require 'rails_helper'
 
 RSpec.describe Service, type: :model do
   describe 'validations' do
-    let! (:service_data) {{ title: "Оригинал", description: 'Хочу протестироваться', price: '1500' }}
-    let! (:service_title_repeat) {{ title: "Оригинал", description: 'Это копия и ложь', price: '2500' }}
-    let! (:service_main) { Service.create(service_data )}
-    let! (:title_repeat) { Service.new(service_title_repeat) }
+    let!(:service_data) { { title: 'Оригинал', description: 'Хочу протестироваться', price: '1500' } }
+    let!(:service_title_repeat) { { title: 'Оригинал', description: 'Это копия и ложь', price: '2500' } }
+    let!(:service_main) { Service.create(service_data) }
+    let!(:title_repeat) { Service.new(service_title_repeat) }
 
-    it "created title repeated service" do
+    it 'created title repeated service' do
       expect(title_repeat.valid?).to eq(false)
     end
 
@@ -27,32 +27,31 @@ RSpec.describe Service, type: :model do
     end
 
     context 'when description - invalid' do
-        it { should_not allow_value(Faker::Lorem.word).for(:description) }
-      end
-  
-      context 'when description is short' do
-        it { should_not allow_value([*'А'..'Я', *'а'..'я'].shuffle[1..9].join).for(:description) }
-      end
-  
-      context 'when description is normal length but invalid letters' do
-        it { should_not allow_value(SecureRandom.alphanumeric(15)).for(:description) }
-      end
-  
-      context 'when description - valid' do
-        it { should allow_value([*'А'..'Я', *'а'..'я', *(0..10)].shuffle[10..100].join).for(:description) }
-      end
+      it { should_not allow_value(Faker::Lorem.word).for(:description) }
+    end
 
-      context 'when price - invalid' do
-        it { should_not allow_value(rand(-100..0).to_s).for(:price) }
-      end
-  
-      context 'when price - valid' do
-        it { should allow_value(rand(1..1000)).for(:price) }
-      end
-  
-      context 'when price - has not only numbers' do
-        it { should_not allow_value(SecureRandom.base64).for(:price) }
-      end
-    
+    context 'when description is short' do
+      it { should_not allow_value([*'А'..'Я', *'а'..'я'].shuffle[1..9].join).for(:description) }
+    end
+
+    context 'when description is normal length but invalid letters' do
+      it { should_not allow_value(SecureRandom.alphanumeric(15)).for(:description) }
+    end
+
+    context 'when description - valid' do
+      it { should allow_value([*'А'..'Я', *'а'..'я', *(0..10)].shuffle[10..100].join).for(:description) }
+    end
+
+    context 'when price - invalid' do
+      it { should_not allow_value(rand(-100..0).to_s).for(:price) }
+    end
+
+    context 'when price - valid' do
+      it { should allow_value(rand(1..1000)).for(:price) }
+    end
+
+    context 'when price - has not only numbers' do
+      it { should_not allow_value(SecureRandom.base64).for(:price) }
+    end
   end
 end

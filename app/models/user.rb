@@ -10,16 +10,16 @@ class User < ApplicationRecord
   has_many :reviews
 
   validates :email, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z0-9.]+@[a-z]{2,6}\.[a-z]{2,3}\z/,
-                                                                message: 'Не верный формат' }
+  message: 'Не верный формат' }
   validates :first_name, presence: true, format: { with: /\A[а-яА-Я\-]+\z/, message: 'Только русские буквы' }
   validates :second_name, presence: true, format: { with: /\A[а-яА-Я\-]+\z/, message: 'Только русские буквы' }
   validates :phone, presence: true, uniqueness: true, format: { with: /\A\+7\d{10}\z/,
-                                                                message: 'Начинается с +7 и только цифры(10 штук)' }
+  message: 'Начинается с +7 и только цифры(10 штук)' }
 
   validate :password_presence
   validate :correct_old_password, on: :update
   validates :password, confirmation: true, allow_blank: true
-  
+
   before_create :confirmation_token
 
   def email_activate

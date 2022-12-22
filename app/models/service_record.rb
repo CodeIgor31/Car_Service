@@ -11,11 +11,9 @@ class ServiceRecord < ApplicationRecord
   enum status: %i[prepared ready]
   has_many_attached :pictures
 
-def date_cannot_be_in_the_past
-  if date.present? && date < Date.today
-    errors.add(:date, "не может быть в прошлом")
+  def date_cannot_be_in_the_past
+    errors.add(:date, 'не может быть в прошлом') if date.present? && date < Date.today
   end
-end
 
   def picture_thumb(pic)
     pic.variant(resize_to_limit: [300, 300]).processed

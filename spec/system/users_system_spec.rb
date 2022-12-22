@@ -19,8 +19,8 @@ RSpec.describe 'users', type: :system do
   end
 
   scenario 'update user' do
-    user = User.create(id: "1", first_name: 'Игорь', second_name: 'Ярубов', email: 'yarub@mail.ru', phone: '+71111111113', password: '12345',
-        password_confirmation: '12345', email_confirmed: "true")
+    user = User.create(id: '1', first_name: 'Игорь', second_name: 'Ярубов', email: 'yarub@mail.ru', phone: '+71111111113', password: '12345',
+                       password_confirmation: '12345', email_confirmed: 'true')
 
     visit login_path
 

@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'services', type: :feature do
   scenario 'invalid' do
     visit service_path
-    
+
     find('#ord').click
 
     expect(find('#msg')).to have_text('Вы не авторизованы')
